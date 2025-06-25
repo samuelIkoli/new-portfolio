@@ -1,4 +1,4 @@
-import { Award, Info, Lightbulb } from 'lucide-react';
+import { Info, Lightbulb } from 'lucide-react';
 import React from 'react'
 
 const About: React.FC = () => {

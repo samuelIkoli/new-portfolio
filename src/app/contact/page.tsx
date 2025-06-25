@@ -1,6 +1,6 @@
 'use client'
 import { useForm, ValidationError } from "@formspree/react";
-import { Instagram, Mail, MapPin, Music, Music2, Phone, Send, Twitch, Youtube } from "lucide-react";
+import { Instagram, Mail, MapPin, Music2, Send, Twitch, Youtube } from "lucide-react";
 import { useState } from "react";
 
 interface ContactFormData {
