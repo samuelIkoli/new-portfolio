@@ -1,5 +1,9 @@
 // 'use client'
+<<<<<<< HEAD
 import { DollarSign, Heart } from "lucide-react";
+=======
+import { Coffee, DollarSign, Heart } from "lucide-react";
+>>>>>>> 40dcfe0 (new portfolio)
 import Donator from "../components/Donator";
 import Exchanger from "../components/Exchanger";
 

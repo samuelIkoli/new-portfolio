@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Info, Lightbulb } from 'lucide-react';
+=======
+import { Award, Info, Lightbulb } from 'lucide-react';
+>>>>>>> 40dcfe0 (new portfolio)
 import React from 'react'
 
 const About: React.FC = () => {
