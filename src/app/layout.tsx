@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -11,6 +12,26 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Define Prop Types for Layout
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+// components/Layout.tsx
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  return (
+    <div className="flex flex-col min-h-screen font-sans bg-gray-50 text-gray-800">
+      {/* Navbar component */}
+      <Navbar />
+      {/* Main content area, where individual pages will be rendered */}
+      <main className="flex-grow container mx-auto px-4 py-8">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +48,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+
+        <Layout>
+          {children}
+        </Layout>
       </body>
     </html>
   );
