@@ -1,9 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-<<<<<<< HEAD
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-=======
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
->>>>>>> 40dcfe0 (new portfolio)
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
