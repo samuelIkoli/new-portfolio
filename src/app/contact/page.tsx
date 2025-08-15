@@ -1,47 +1,15 @@
 'use client'
 import { useForm, ValidationError } from "@formspree/react";
 import { Instagram, Mail, MapPin, Music2, Send, Twitch, Youtube } from "lucide-react";
-import { useState } from "react";
-
-interface ContactFormData {
-    name: string;
-    email: string;
-    message: string;
-}
 
 // pages/contact.tsx (Contact Page)
 const Contact: React.FC = () => {
-    const [formData, setFormData] = useState<ContactFormData>({
-        name: '',
-        email: '',
-        message: '',
-    });
-    const [statusMessage, setStatusMessage] = useState<string>('');
-    const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-    // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    //     const { name, value } = e.target;
-    //     setFormData((prevData: any) => ({
-    //         ...prevData,
-    //         [name]: value,
-    //     }));
-    // };
+    // const [statusMessage, setStatusMessage] = useState<string>('');
+    // const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-    const [state, handleSubmit2] = useForm("xnqwvbgj");
+    const [state, handleSubmit] = useForm("xnqwvbgj");
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setStatusMessage('Sending message...');
-        setIsSuccess(false);
-
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form data submitted:', formData);
-            setStatusMessage('Message sent successfully! (This is a simulation)');
-            setIsSuccess(true);
-            setFormData({ name: '', email: '', message: '' }); // Clear form
-        }, 1500); // Simulate network delay
-    };
 
     return (
         <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200">
@@ -50,9 +18,7 @@ const Contact: React.FC = () => {
             </h2>
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                I'd love to hear from you! Whether you have a question, a project idea,
-                or just want to say hello, feel free to reach out using the form below
-                or directly via email/phone.
+                {"I'd love to hear from you! Whether you have a question, a project idea, or just want to say hello, feel free to reach out using the form below or directly via email/phone."}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -110,7 +76,7 @@ const Contact: React.FC = () => {
 
                 {/* Contact Form */}
                 <div className="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
-                    <form onSubmit={handleSubmit2} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                                 Name
@@ -180,11 +146,11 @@ const Contact: React.FC = () => {
                         >
                             <Send size={20} className="mr-2" /> Send Message
                         </button>
-                        {statusMessage && (
+                        {/* {statusMessage && (
                             <p className={`mt-4 text-center text-sm ${isSuccess ? 'text-green-600' : 'text-red-600'}`}>
                                 {statusMessage}
                             </p>
-                        )}
+                        )} */}
                     </form>
                 </div>
             </div>

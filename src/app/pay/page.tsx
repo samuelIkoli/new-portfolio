@@ -17,7 +17,7 @@ interface PayConfig {
 const Pay: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [amount, setAmount] = useState<string>('');
-    const [paymentStatus, setPaymentStatus] = useState<string | null>(null);
+    // const [paymentStatus, setPaymentStatus] = useState<string | null>(null);
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -34,19 +34,6 @@ const Pay: React.FC = () => {
         amount: parseInt(amount) * 100, // Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
         publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '', // Replace with your actual public key
     };
-
-    // Placeholder for Paystack success callback
-    const onSuccess = (reference: any) => {
-        console.log('Payment Success:', reference);
-        setPaymentStatus('Payment successful!');
-        // In a real application, you would verify this transaction on your backend
-    };
-
-    // Placeholder for Paystack close callback
-    const onClose = () => {
-        console.log('Payment dialog closed');
-        setPaymentStatus('Payment cancelled or closed.');
-    }
 
 
     return (
@@ -98,11 +85,11 @@ const Pay: React.FC = () => {
                     <PaystackInlineButton config={config} />
 
 
-                    {paymentStatus && (
+                    {/* {paymentStatus && (
                         <p className={`text-center text-md font-medium ${paymentStatus.includes('successful') ? 'text-green-300' : 'text-red-300'}`}>
                             {paymentStatus}
                         </p>
-                    )}
+                    )} */}
                 </form>
             </div>
         </div>

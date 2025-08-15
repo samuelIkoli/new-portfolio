@@ -21,7 +21,7 @@ import Samuel from './components/Samuel';
 const Home: React.FC = () => {
   return (
     <div className='grid lg:grid-cols-3'>
-      <div className="min-h-[60vh] lg:col-span-2 flex flex-col items-center justify-center text-center p-6 bg-white shadow-lg rounded-lg border border-gray-200">
+      <div className="min-h-[60vh] lg:col-span-2 flex flex-col items-center justify-center text-center p-6 rounded-lg ">
         <Sparkles size={60} className="text-blue-500 mb-6 animate-pulse" />
         <Typewriter />
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className='min-h-[60vh] lg:col-span-1 flex flex-col items-center text-center p-6 bg-white shadow-lg rounded-lg border border-gray-200'>
+      <div className='min-h-[60vh] lg:col-span-1 flex flex-col items-center text-center p-6 rounded-lg'>
         <Samuel />
       </div>
 

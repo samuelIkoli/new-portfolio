@@ -1,5 +1,15 @@
+// import React from 'react'
+
+// function page() {
+//     return (
+//         <div>page</div>
+//     )
+// }
+// export default page
+
 'use client'
 import React, { useState } from 'react';
+
 
 import { co2 } from "@tgwf/co2";
 import { averageIntensity, marginalIntensity, hosting } from '@tgwf/co2';
@@ -10,7 +20,7 @@ const Greenboard: React.FC = () => {
         marginalIntensityNGA: number | null;
         averageIntensityNGA: number | null;
         perByteEstimate: number | null;
-        googleGreenStatus: boolean | null;
+        googleGreenStatus: boolean | null | string[];
     }>({
         marginalIntensityNGA: null,
         averageIntensityNGA: null,
@@ -39,11 +49,11 @@ const Greenboard: React.FC = () => {
                 console.log({ NGA });
 
                 // Check hosting status for google.com
-                const greenCheckResult = await hosting("google.com");
+                const greenCheckResult = await hosting.check("google.com");
                 console.log('greencheck is', greenCheckResult);
 
                 setCo2Data({
-                    marginalIntensityNGA: MNGA,
+                    marginalIntensityNGA: parseInt(MNGA),
                     averageIntensityNGA: NGA,
                     perByteEstimate: estimate,
                     googleGreenStatus: greenCheckResult,

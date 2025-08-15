@@ -82,6 +82,7 @@ const Calculator: React.FC = () => {
             setCalc(result);
         } catch (error) {
             setCalc("Error"); // Display "Error" if evaluation fails
+            console.log(error)
         }
     }
 

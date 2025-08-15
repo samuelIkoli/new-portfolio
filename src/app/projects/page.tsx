@@ -150,7 +150,7 @@ const Projects: React.FC = () => {
                 <Code size={36} className="text-blue-500 mr-3" /> My Projects
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Here are some of the key projects I've worked on, showcasing my skills
+                Here are some of the key projects I&apos;ve worked on, showcasing my skills
                 in full-stack development and various technologies.
             </p>
 

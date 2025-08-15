@@ -14,8 +14,8 @@ const PaystackInlineButton = ({ config }: { config: PaystackConfig }) => {
 
     const initializePayment = usePaystackPayment(config);
 
-    const onSuccess = (reference: any) => {
-        console.log('Payment successful:');
+    const onSuccess = (reference: unknown) => {
+        console.log('Payment successful:', reference);
     };
 
     const onClose = () => {
