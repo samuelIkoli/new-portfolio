@@ -33,7 +33,7 @@ export default function Navbar() {
                         <div className="flex shrink-0 items-center h-full">
                             <img
                                 alt="Your Company"
-                                src="myLogo3.png"
+                                src="/MyLogo3.png"
                                 className="h-20 w-auto object-contain"
                             />
                         </div>
