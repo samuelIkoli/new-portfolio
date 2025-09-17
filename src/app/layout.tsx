@@ -36,6 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 export const metadata: Metadata = {
   title: 'Samuel Ikoli - A Full Stack Software Developer',
   description: 'Official portfolio page of Samuel Ikoli. A Bachelor of Electrcal and Electronics Engineering building a career in Software Engineering',
+  icons: "https://samuelikoli.com.ng/MyLogo2.png",
   openGraph: {
     title: 'Samuel Ikoli - A Full Stack Software Developer',
     description: 'Official portfolio page of Samuel Ikoli. A Bachelor of Electrcal and Electronics Engineering building a career in Software Engineering',
