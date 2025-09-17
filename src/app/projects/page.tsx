@@ -15,6 +15,11 @@ interface ProjectItem {
 const Projects: React.FC = () => {
     const projects: ProjectItem[] = [
         {
+            title: 'Afro Fashion Fuse',
+            description: 'I built AFF Designer, a browser-based fashion design studio using Next.js, TypeScript, TailwindCSS, and Fabric.js v6. The platform lets users customize garment patterns (shirts, sleeves, collars, etc.) on standardized human frames, adjusting measurements like sleeve length or neckline depth. With anchor-based alignment, fabric textures (e.g. Ankara, denim), and export options to PNG/SVG or JSON, it provides a modern tool for designers to create and preview clothing digitally',
+            technologies: ['Typescript', 'NodeJS', 'NextJS', 'PostgreSQL'],
+        },
+        {
             title: 'AI Chatbot',
             description: 'Leveraging Retrieval-Augmented Generation (RAG) and Google Gemini as the Large Language Model (LLM) to develop a Support AI that processes documents and text inputs from companies, enabling it to provide accurate, context-aware responses to customer inquiries.',
             technologies: ['GoLang', 'Gin', 'Google Gemini', 'MongoDB'],

@@ -1,8 +1,58 @@
-import { Briefcase, Download, GraduationCap, Lightbulb } from "lucide-react";
+import { Briefcase, GraduationCap, Lightbulb, Eye } from "lucide-react";
 import React from 'react'
+import { ExperienceCard } from "../components/ExperienceCard";
+
+const experiences = [
+    {
+        title: "Full Stack Developer",
+        company: "Afro Fashion Fuse",
+        date: "Jan 2025 - Present",
+        bullets: ["Developed a responsive frontend with Next.js 13+, TypeScript, and TailwindCSS, improving cross-device user experience and reducing UI load times by 30%.",
+            "Built a parametric garment design studio with Fabric.js v6 that enabled real-time customization of SVG pattern blocks, increasing user design flexibility by 50%.",
+            "Implemented a measurement-based scaling system that mapped garments to a standardized human avatars, ensuring consistent fit ratios across all laptop/desktop.pc screen sizes.",
+            "Introduced anchor-based JSON metadata to align garment parts precisely, reducing manual adjustment errors and improving pattern assembly accuracy by 40%.",
+            "Designed dynamic garment customization features (sleeve length, neck radius, slit depth), empowering users to tailor clothing designs to personal measurements.",
+            "Enabled export of designs to PNG/SVG formats with JSON configs, allowing users to re-render designs or integrate with 3D previews for downstream workflows.",
+            "Refactored codebase into reusable lib modules, streamlining development and cutting integration time for new garment types by 25%.",
+        ]
+    },
+    {
+        title: "Backend Developer",
+        company: "Lendsqr",
+        date: "Dec 2023 - Sept 2024",
+        bullets: [
+            "Refactored a legacy codebase by applying modern software engineering principles, reducing technical debt and improving maintainability by 35%.",
+            "Migrated core services from JavaScript to TypeScript with an object-oriented design approach, increasing type safety and cutting runtime errors by 40%.",
+            "Applied algorithmic complexity analysis and SDLC best practices to debug and optimize implementations, improving system performance and reducing defect resolution time by 25%.",
+            "Built and shipped new features using innovative technologies and efficient algorithm design, accelerating delivery cycles and enhancing end-user experience."
+        ]
+    },
+    {
+        title: "Tech Support",
+        company: "Consummate Traders",
+        date: "Sep 2023 - Dec 2023",
+        bullets: [
+            "Collaborated with the technical team to optimize operations through smart data structures.",
+            "Investigated and improved product quality with tech-driven solutions."
+        ]
+    },
+    {
+        title: "Fullstack Developer",
+        company: "Buzz.ng",
+        date: "Dec 2022 - Jun 2023",
+        bullets: [
+            "Led the development of a cross-platform mobile app using React Native.",
+            "Built RESTful APIs and CRUD operations using Node.js and Express with SQL database.",
+            "Implemented frontend features based on designs using libraries like react-native-maps and Google autofill.",
+            "Integrated third-party services for authentication, ORM, and media."
+        ]
+    }
+];
+
 
 
 const Resume: React.FC = () => {
+
     return (
         <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 flex items-center">
@@ -14,18 +64,17 @@ const Resume: React.FC = () => {
                 You can also download my full resume for a detailed overview.
             </p>
 
-            {/* Download Button */}
+            {/* View Resume Button */}
             <div className="mb-10 text-center">
                 <a
-                    href="/MyResume.pdf"
-                    download="Samuel_Ikoli_Resume.pdf"
+                    href="/myResume.pdf"
                     className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-bold rounded-full shadow-lg
          hover:bg-green-700 transition-colors duration-300 transform hover:scale-105
          focus:outline-none focus:ring-4 focus:ring-green-300"
-                    aria-label="Download Full Resume"
+                    aria-label="View Full Resume"
                 >
-                    <Download size={24} className="mr-3" />
-                    Download Full Resume (PDF)
+                    <Eye size={24} className="mr-3" />
+                    View Full Resume (PDF)
                 </a>
             </div>
 
@@ -36,36 +85,15 @@ const Resume: React.FC = () => {
                 </h3>
 
                 <div className="space-y-6">
-                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm border border-gray-200">
-                        <h4 className="text-xl font-bold text-gray-900">Backend Developer</h4>
-                        <p className="text-md text-gray-600 mb-2">Lendsqr | Dec 2023 - Sept 2024</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Refactored legacy codebases for improved quality using software engineering principles.</li>
-                            <li>Migrated code from JavaScript to TypeScript emphasizing object-oriented design.</li>
-                            <li>Applied complexity analysis and SDLC best practices to debug and optimize implementations.</li>
-                            <li>Built features using innovative technologies and efficient algorithm design.</li>
-                        </ul>
-                    </div>
-
-                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm border border-gray-200">
-                        <h4 className="text-xl font-bold text-gray-900">Tech Support</h4>
-                        <p className="text-md text-gray-600 mb-2">Consummate Traders | Sep 2023 - Dec 2023</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Collaborated with the technical team to optimize operations through smart data structures.</li>
-                            <li>Investigated and improved product quality with tech-driven solutions.</li>
-                        </ul>
-                    </div>
-
-                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm border border-gray-200">
-                        <h4 className="text-xl font-bold text-gray-900">Fullstack Developer</h4>
-                        <p className="text-md text-gray-600 mb-2">Buzz.ng | Dec 2022 - Jun 2023</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Led the development of a cross-platform mobile app using React Native.</li>
-                            <li>Built RESTful APIs and CRUD operations using Node.js and Express with SQL database.</li>
-                            <li>Implemented frontend features based on designs using libraries like react-native-maps and Google autofill.</li>
-                            <li>Integrated third-party services for authentication, ORM, and media.</li>
-                        </ul>
-                    </div>
+                    {experiences.map((exp, idx) => (
+                        <ExperienceCard
+                            key={idx}
+                            title={exp.title}
+                            company={exp.company}
+                            date={exp.date}
+                            bullets={exp.bullets}
+                        />
+                    ))}
                 </div>
             </section>
 

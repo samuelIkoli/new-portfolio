@@ -1,4 +1,4 @@
-import { Info, Lightbulb } from 'lucide-react';
+import { Info, Lightbulb, Gamepad2 } from 'lucide-react';
 import React from 'react'
 
 const About: React.FC = () => {
@@ -29,9 +29,11 @@ const About: React.FC = () => {
                     />
                 </div>
             </div>
-
+            <h3 className="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                <Gamepad2 size={24} className="text-green-500 mr-2" /> Hobbies
+            </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-                {"When Im not coding, you can find me playing video games, watching anime or movies, playing football or working out, creating content, maybe exploring new technologies, browsing the net for expensive items that I want to own someday or just curious about, or enjoying outdoor activities. I'm always eager to connect with anyone that aligns with my goals and discuss new opportunities."}
+                {"When I'm not coding, you can find me playing video games, watching anime or movies, playing football or working out, creating content, maybe exploring new technologies, browsing the net for expensive items that I want to own someday or just curious about, or enjoying outdoor activities. I'm always eager to connect with anyone that aligns with my goals and discuss new opportunities."}
             </p>
         </div>
     );
